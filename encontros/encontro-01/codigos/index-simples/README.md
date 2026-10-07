@@ -74,14 +74,18 @@ Crie o arquivo index.html no seu diretório atual:
 
 ### Passo 2: Executar o Nginx mapeando o arquivo local
 
-Execute o Nginx padrão e substitua o diretório de páginas pelo seu diretório atual ($(pwd) no Linux/macOS ou %cd% no Windows Command Prompt):
+Execute o Nginx padrão e substitua o diretório de páginas pelo seu diretório atual ($(pwd) no Linux/macOS ou %cd% no Windows Command Prompt, ou ${PWD} no Visual Studio terminal):
 
 ```bash
 docker run -d \
   --name nginx-bind \
   -p 8080:80 \
-  -v $(pwd)/index.html:/usr/share/nginx/html/index.html \
+  -v ${PWD}/index.html:/usr/share/nginx/html/index.html \
   nginx:alpine
+```
+
+```bash
+docker run -d --name nginx-bind -p 8080:80 -v ${PWD}/index.html:/usr/share/nginx/html/index.html nginx:alpine
 ```
 
 Acesse http://localhost:8080 no seu navegador para ver sua página sendo servida.
@@ -151,6 +155,10 @@ docker run -d \
   postgres:15-alpine
 ```
 
+```bash
+docker run -d --name pg-sem-volume -e POSTGRES_PASSWORD=senha123 postgres:15-alpine
+```
+
 ### 2. Acessar o banco via docker exec e criar uma tabela/dados:
 
 ```bash
@@ -180,6 +188,10 @@ docker run -d \
   --name pg-sem-volume \
   -e POSTGRES_PASSWORD=senha123 \
   postgres:15-alpine
+```
+
+```bash
+docker run -d --name pg-sem-volume -e POSTGRES_PASSWORD=senha123 postgres:15-alpine
 ```
 
 5. Verificar se os dados persistem:
@@ -221,6 +233,10 @@ docker run -d \
   postgres:15-alpine
 ```
 
+```bash
+docker run -d --name pg-com-volume -v pg-dados:/var/lib/postgresql/data -e POSTGRES_PASSWORD=senha123 postgres:15-alpine
+```
+
 ### 3. Acessar e cadastrar dados:
 
 ```bash
@@ -251,6 +267,10 @@ docker run -d \
   -v pg-dados:/var/lib/postgresql/data \
   -e POSTGRES_PASSWORD=senha123 \
   postgres:15-alpine
+```
+
+```bash
+docker run -d --name pg-com-volume -v pg-dados:/var/lib/postgresql/data -e POSTGRES_PASSWORD=senha123 postgres:15-alpine
 ```
 
 ### 6. Validar que os dados foram preservados:
