@@ -1,0 +1,91 @@
+2024.09.12 18:03:58 INFO  es[][o.e.n.Node] version[7.17.15], pid[26], build[default/tar/0b8ecfb4378335f4689c4223d1f1115f16bef3ba/2023-11-10T22:03:46.987399016Z], OS[Linux/5.15.146.1-microsoft-standard-WSL2/amd64], JVM[Eclipse Adoptium/OpenJDK 64-Bit Server VM/17.0.12/17.0.12+7]
+2024.09.12 18:03:58 INFO  es[][o.e.n.Node] JVM home [/opt/java/openjdk]
+2024.09.12 18:03:58 INFO  es[][o.e.n.Node] JVM arguments [-XX:+UseG1GC, -Djava.io.tmpdir=/opt/sonarqube/temp, -XX:ErrorFile=/opt/sonarqube/logs/es_hs_err_pid%p.log, -Des.networkaddress.cache.ttl=60, -Des.networkaddress.cache.negative.ttl=10, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -Djna.tmpdir=/opt/sonarqube/temp, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dio.netty.allocator.numDirectArenas=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Dlog4j2.formatMsgNoLookups=true, -Djava.locale.providers=COMPAT, -Dcom.redhat.fips=false, -Des.enforce.bootstrap.checks=true, -Xmx512m, -Xms512m, -XX:MaxDirectMemorySize=256m, -XX:+HeapDumpOnOutOfMemoryError, -Des.path.home=/opt/sonarqube/elasticsearch, -Des.path.conf=/opt/sonarqube/temp/conf/es, -Des.distribution.flavor=default, -Des.distribution.type=tar, -Des.bundled_jdk=false]
+2024.09.12 18:03:58 INFO  es[][o.e.p.PluginsService] loaded module [analysis-common]
+2024.09.12 18:03:58 INFO  es[][o.e.p.PluginsService] loaded module [lang-painless]
+2024.09.12 18:03:58 INFO  es[][o.e.p.PluginsService] loaded module [parent-join]
+2024.09.12 18:03:58 INFO  es[][o.e.p.PluginsService] loaded module [reindex]
+2024.09.12 18:03:58 INFO  es[][o.e.p.PluginsService] loaded module [transport-netty4]
+2024.09.12 18:03:58 INFO  es[][o.e.p.PluginsService] no plugins loaded
+2024.09.12 18:03:58 INFO  es[][o.e.e.NodeEnvironment] using [1] data paths, mounts [[/opt/sonarqube/data (F:\)]], net usable_space [828.5gb], net total_space [931.5gb], types [9p]
+2024.09.12 18:03:58 INFO  es[][o.e.e.NodeEnvironment] heap size [512mb], compressed ordinary object pointers [true]
+2024.09.12 18:03:59 INFO  es[][o.e.n.Node] node name [sonarqube], node ID [3aHCcDQ1Qy6HnTL1EjOxaw], cluster name [sonarqube], roles [data_frozen, master, remote_cluster_client, data, data_content, data_hot, data_warm, data_cold, ingest]
+2024.09.12 18:04:03 INFO  es[][o.e.t.NettyAllocator] creating NettyAllocator with the following configs: [name=unpooled, suggested_max_allocation_size=256kb, factors={es.unsafe.use_unpooled_allocator=null, g1gc_enabled=true, g1gc_region_size=1mb, heap_size=512mb}]
+2024.09.12 18:04:03 INFO  es[][o.e.i.r.RecoverySettings] using rate limit [40mb] with [default=40mb, read=0b, write=0b, max=0b]
+2024.09.12 18:04:03 INFO  es[][o.e.d.DiscoveryModule] using discovery type [zen] and seed hosts providers [settings]
+2024.09.12 18:04:04 INFO  es[][o.e.g.DanglingIndicesState] gateway.auto_import_dangling_indices is disabled, dangling indices will not be automatically detected or imported and must be managed manually
+2024.09.12 18:04:04 INFO  es[][o.e.n.Node] initialized
+2024.09.12 18:04:04 INFO  es[][o.e.n.Node] starting ...
+2024.09.12 18:04:05 INFO  es[][o.e.t.TransportService] publish_address {127.0.0.1:37079}, bound_addresses {127.0.0.1:37079}
+2024.09.12 18:04:05 INFO  es[][o.e.b.BootstrapChecks] explicitly enforcing bootstrap checks
+2024.09.12 18:04:05 INFO  es[][o.e.c.c.Coordinator] setting initial configuration to VotingConfiguration{3aHCcDQ1Qy6HnTL1EjOxaw}
+2024.09.12 18:04:06 INFO  es[][o.e.c.s.MasterService] elected-as-master ([1] nodes joined)[{sonarqube}{3aHCcDQ1Qy6HnTL1EjOxaw}{QQv-jmodQAq_FROEMNCshA}{127.0.0.1}{127.0.0.1:37079}{cdfhimrsw} elect leader, _BECOME_MASTER_TASK_, _FINISH_ELECTION_], term: 1, version: 1, delta: master node changed {previous [], current [{sonarqube}{3aHCcDQ1Qy6HnTL1EjOxaw}{QQv-jmodQAq_FROEMNCshA}{127.0.0.1}{127.0.0.1:37079}{cdfhimrsw}]}
+2024.09.12 18:04:06 INFO  es[][o.e.c.c.CoordinationState] cluster UUID set to [27_vlf01SYGetXNAJTh7Zg]
+2024.09.12 18:04:07 INFO  es[][o.e.c.s.ClusterApplierService] master node changed {previous [], current [{sonarqube}{3aHCcDQ1Qy6HnTL1EjOxaw}{QQv-jmodQAq_FROEMNCshA}{127.0.0.1}{127.0.0.1:37079}{cdfhimrsw}]}, term: 1, version: 1, reason: Publication{term=1, version=1}
+2024.09.12 18:04:07 INFO  es[][o.e.h.AbstractHttpServerTransport] publish_address {127.0.0.1:9001}, bound_addresses {127.0.0.1:9001}
+2024.09.12 18:04:07 INFO  es[][o.e.n.Node] started
+2024.09.12 18:04:07 INFO  es[][o.e.g.GatewayService] recovered [0] indices into cluster_state
+2024.09.12 18:04:12 INFO  es[][o.e.n.Node] stopping ...
+2024.09.12 18:04:12 INFO  es[][o.e.n.Node] stopped
+2024.09.12 18:04:12 INFO  es[][o.e.n.Node] closing ...
+2024.09.12 18:04:12 INFO  es[][o.e.n.Node] closed
+2024.09.12 18:15:01 INFO  es[][o.e.n.Node] version[7.17.15], pid[26], build[default/tar/0b8ecfb4378335f4689c4223d1f1115f16bef3ba/2023-11-10T22:03:46.987399016Z], OS[Linux/5.15.146.1-microsoft-standard-WSL2/amd64], JVM[Eclipse Adoptium/OpenJDK 64-Bit Server VM/17.0.12/17.0.12+7]
+2024.09.12 18:15:01 INFO  es[][o.e.n.Node] JVM home [/opt/java/openjdk]
+2024.09.12 18:15:01 INFO  es[][o.e.n.Node] JVM arguments [-XX:+UseG1GC, -Djava.io.tmpdir=/opt/sonarqube/temp, -XX:ErrorFile=/opt/sonarqube/logs/es_hs_err_pid%p.log, -Des.networkaddress.cache.ttl=60, -Des.networkaddress.cache.negative.ttl=10, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -Djna.tmpdir=/opt/sonarqube/temp, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dio.netty.allocator.numDirectArenas=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Dlog4j2.formatMsgNoLookups=true, -Djava.locale.providers=COMPAT, -Dcom.redhat.fips=false, -Des.enforce.bootstrap.checks=true, -Xmx512m, -Xms512m, -XX:MaxDirectMemorySize=256m, -XX:+HeapDumpOnOutOfMemoryError, -Des.path.home=/opt/sonarqube/elasticsearch, -Des.path.conf=/opt/sonarqube/temp/conf/es, -Des.distribution.flavor=default, -Des.distribution.type=tar, -Des.bundled_jdk=false]
+2024.09.12 18:15:01 INFO  es[][o.e.p.PluginsService] loaded module [analysis-common]
+2024.09.12 18:15:01 INFO  es[][o.e.p.PluginsService] loaded module [lang-painless]
+2024.09.12 18:15:01 INFO  es[][o.e.p.PluginsService] loaded module [parent-join]
+2024.09.12 18:15:01 INFO  es[][o.e.p.PluginsService] loaded module [reindex]
+2024.09.12 18:15:01 INFO  es[][o.e.p.PluginsService] loaded module [transport-netty4]
+2024.09.12 18:15:01 INFO  es[][o.e.p.PluginsService] no plugins loaded
+2024.09.12 18:15:01 INFO  es[][o.e.e.NodeEnvironment] using [1] data paths, mounts [[/opt/sonarqube/data (F:\)]], net usable_space [828.5gb], net total_space [931.5gb], types [9p]
+2024.09.12 18:15:01 INFO  es[][o.e.e.NodeEnvironment] heap size [512mb], compressed ordinary object pointers [true]
+2024.09.12 18:15:01 INFO  es[][o.e.n.Node] node name [sonarqube], node ID [3aHCcDQ1Qy6HnTL1EjOxaw], cluster name [sonarqube], roles [data_frozen, master, remote_cluster_client, data, data_content, data_hot, data_warm, data_cold, ingest]
+2024.09.12 18:15:04 INFO  es[][o.e.t.NettyAllocator] creating NettyAllocator with the following configs: [name=unpooled, suggested_max_allocation_size=256kb, factors={es.unsafe.use_unpooled_allocator=null, g1gc_enabled=true, g1gc_region_size=1mb, heap_size=512mb}]
+2024.09.12 18:15:04 INFO  es[][o.e.i.r.RecoverySettings] using rate limit [40mb] with [default=40mb, read=0b, write=0b, max=0b]
+2024.09.12 18:15:04 INFO  es[][o.e.d.DiscoveryModule] using discovery type [zen] and seed hosts providers [settings]
+2024.09.12 18:15:04 INFO  es[][o.e.g.DanglingIndicesState] gateway.auto_import_dangling_indices is disabled, dangling indices will not be automatically detected or imported and must be managed manually
+2024.09.12 18:15:04 INFO  es[][o.e.n.Node] initialized
+2024.09.12 18:15:04 INFO  es[][o.e.n.Node] starting ...
+2024.09.12 18:15:04 INFO  es[][o.e.t.TransportService] publish_address {127.0.0.1:33421}, bound_addresses {127.0.0.1:33421}
+2024.09.12 18:15:05 INFO  es[][o.e.b.BootstrapChecks] explicitly enforcing bootstrap checks
+2024.09.12 18:15:05 INFO  es[][o.e.c.c.Coordinator] cluster UUID [27_vlf01SYGetXNAJTh7Zg]
+2024.09.12 18:15:05 INFO  es[][o.e.c.s.MasterService] elected-as-master ([1] nodes joined)[{sonarqube}{3aHCcDQ1Qy6HnTL1EjOxaw}{oTZMELCoSfiEwEbJUreUwA}{127.0.0.1}{127.0.0.1:33421}{cdfhimrsw} elect leader, _BECOME_MASTER_TASK_, _FINISH_ELECTION_], term: 2, version: 3, delta: master node changed {previous [], current [{sonarqube}{3aHCcDQ1Qy6HnTL1EjOxaw}{oTZMELCoSfiEwEbJUreUwA}{127.0.0.1}{127.0.0.1:33421}{cdfhimrsw}]}
+2024.09.12 18:15:05 INFO  es[][o.e.c.s.ClusterApplierService] master node changed {previous [], current [{sonarqube}{3aHCcDQ1Qy6HnTL1EjOxaw}{oTZMELCoSfiEwEbJUreUwA}{127.0.0.1}{127.0.0.1:33421}{cdfhimrsw}]}, term: 2, version: 3, reason: Publication{term=2, version=3}
+2024.09.12 18:15:05 INFO  es[][o.e.h.AbstractHttpServerTransport] publish_address {127.0.0.1:9001}, bound_addresses {127.0.0.1:9001}
+2024.09.12 18:15:05 INFO  es[][o.e.n.Node] started
+2024.09.12 18:15:05 INFO  es[][o.e.g.GatewayService] recovered [0] indices into cluster_state
+2024.09.12 18:15:22 INFO  es[][o.e.c.m.MetadataCreateIndexService] [metadatas] creating index, cause [api], templates [], shards [1]/[0]
+2024.09.12 18:15:23 INFO  es[][o.e.c.r.a.AllocationService] Cluster health status changed from [YELLOW] to [GREEN] (reason: [shards started [[metadatas][0]]]).
+2024.09.12 18:15:24 INFO  es[][o.e.c.m.MetadataMappingService] [metadatas/n9hOrGxNSWiDPLm0IOwg7A] create_mapping [metadata]
+2024.09.12 18:15:24 INFO  es[][o.e.c.m.MetadataCreateIndexService] [components] creating index, cause [api], templates [], shards [5]/[0]
+2024.09.12 18:15:28 INFO  es[][o.e.c.r.a.AllocationService] Cluster health status changed from [YELLOW] to [GREEN] (reason: [shards started [[components][4]]]).
+2024.09.12 18:15:28 INFO  es[][o.e.c.m.MetadataMappingService] [components/toZEsJogSeyB-9kIRkSNBQ] create_mapping [auth]
+2024.09.12 18:15:29 INFO  es[][o.e.c.m.MetadataCreateIndexService] [projectmeasures] creating index, cause [api], templates [], shards [5]/[0]
+2024.09.12 18:15:33 INFO  es[][o.e.c.r.a.AllocationService] Cluster health status changed from [YELLOW] to [GREEN] (reason: [shards started [[projectmeasures][4]]]).
+2024.09.12 18:15:33 INFO  es[][o.e.c.m.MetadataMappingService] [projectmeasures/NcgIvm4FSXmageWeRP-ymQ] create_mapping [auth]
+2024.09.12 18:15:34 INFO  es[][o.e.c.m.MetadataCreateIndexService] [rules] creating index, cause [api], templates [], shards [2]/[0]
+2024.09.12 18:15:36 INFO  es[][o.e.c.r.a.AllocationService] Cluster health status changed from [YELLOW] to [GREEN] (reason: [shards started [[rules][0]]]).
+2024.09.12 18:15:36 INFO  es[][o.e.c.m.MetadataMappingService] [rules/6ltY7OOzRBu6aclWol1gdQ] create_mapping [rule]
+2024.09.12 18:15:37 INFO  es[][o.e.c.m.MetadataCreateIndexService] [issues] creating index, cause [api], templates [], shards [5]/[0]
+2024.09.12 18:15:40 INFO  es[][o.e.c.r.a.AllocationService] Cluster health status changed from [YELLOW] to [GREEN] (reason: [shards started [[issues][4]]]).
+2024.09.12 18:15:41 INFO  es[][o.e.c.m.MetadataMappingService] [issues/WPFrqn-yScC4u8ktHFGJjQ] create_mapping [auth]
+2024.09.12 18:15:41 INFO  es[][o.e.c.m.MetadataCreateIndexService] [users] creating index, cause [api], templates [], shards [1]/[0]
+2024.09.12 18:15:43 INFO  es[][o.e.c.r.a.AllocationService] Cluster health status changed from [YELLOW] to [GREEN] (reason: [shards started [[users][0]]]).
+2024.09.12 18:15:43 INFO  es[][o.e.c.m.MetadataMappingService] [users/8YLbqqdwTOmDf73ecPYEog] create_mapping [user]
+2024.09.12 18:15:43 INFO  es[][o.e.c.m.MetadataCreateIndexService] [views] creating index, cause [api], templates [], shards [5]/[0]
+2024.09.12 18:15:47 INFO  es[][o.e.c.r.a.AllocationService] Cluster health status changed from [YELLOW] to [GREEN] (reason: [shards started [[views][4]]]).
+2024.09.12 18:15:47 INFO  es[][o.e.c.m.MetadataMappingService] [views/tqMdvY_bRwuGbaPDSw5XhA] create_mapping [view]
+2024.09.12 18:16:21 INFO  es[][o.e.c.s.IndexScopedSettings] updating [index.refresh_interval] from [30s] to [-1]
+2024.09.12 18:16:21 INFO  es[][o.e.c.s.IndexScopedSettings] updating [index.refresh_interval] from [30s] to [-1]
+2024.09.12 18:16:22 INFO  es[][o.e.c.s.IndexScopedSettings] updating [index.refresh_interval] from [-1] to [30s]
+2024.09.12 18:16:22 INFO  es[][o.e.c.s.IndexScopedSettings] updating [index.refresh_interval] from [-1] to [30s]
+2024.09.12 18:16:23 INFO  es[][o.e.c.s.IndexScopedSettings] updating [index.refresh_interval] from [30s] to [-1]
+2024.09.12 18:16:23 INFO  es[][o.e.c.s.IndexScopedSettings] updating [index.refresh_interval] from [30s] to [-1]
+2024.09.12 18:16:23 INFO  es[][o.e.c.s.IndexScopedSettings] updating [index.refresh_interval] from [-1] to [30s]
+2024.09.12 18:16:23 INFO  es[][o.e.c.s.IndexScopedSettings] updating [index.refresh_interval] from [-1] to [30s]
+2024.09.12 23:03:05 WARN  es[][o.e.t.ThreadPool] timer thread slept for [5.7s/5790ms] on absolute clock which is above the warn threshold of [5000ms]
+2024.09.12 23:03:05 WARN  es[][o.e.t.ThreadPool] timer thread slept for [5.7s/5789734224ns] on relative clock which is above the warn threshold of [5000ms]
+2024.09.12 23:19:00 WARN  es[][o.e.t.ThreadPool] timer thread slept for [15.9m/954736ms] on absolute clock which is above the warn threshold of [5000ms]
+2024.09.12 23:50:57 WARN  es[][o.e.t.ThreadPool] timer thread slept for [5.8s/5878ms] on absolute clock which is above the warn threshold of [5000ms]
+2024.09.12 23:50:57 WARN  es[][o.e.t.ThreadPool] timer thread slept for [5.8s/5877506753ns] on relative clock which is above the warn threshold of [5000ms]

@@ -1,0 +1,10 @@
+2024.09.18 16:55:55 INFO  app[][o.s.a.SchedulerImpl] Stopping SonarQube
+2024.09.18 16:55:55 INFO  app[][o.s.a.SchedulerImpl] Sonarqube has been requested to stop
+2024.09.18 16:55:55 INFO  app[][o.s.a.SchedulerImpl] Stopping [Compute Engine] process...
+2024.09.18 16:55:55 INFO  app[][o.s.a.SchedulerImpl] Process[Compute Engine] is stopped
+2024.09.18 16:55:55 INFO  app[][o.s.a.SchedulerImpl] Stopping [Web Server] process...
+2024.09.18 16:55:56 INFO  app[][o.s.a.SchedulerImpl] Stopping [ElasticSearch] process...
+2024.09.18 16:55:56 INFO  app[][o.s.a.SchedulerImpl] Process[Web Server] is stopped
+2024.09.18 16:55:56 INFO  app[][o.s.a.SchedulerImpl] Process[ElasticSearch] is stopped
+2024.09.18 16:55:56 WARN  app[][o.s.a.p.AbstractManagedProcess] Process exited with exit value [ElasticSearch]: 143
+2024.09.18 16:55:56 INFO  app[][o.s.a.SchedulerImpl] SonarQube is stopped

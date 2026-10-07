@@ -1,0 +1,41 @@
+2024.09.18 09:28:39 ERROR web[][o.s.s.m.ElasticSearchMetricTask] Failed to query ES status
+org.sonar.server.es.ElasticsearchException: Fail to execute es request
+	at org.sonar.server.es.EsClient.execute(EsClient.java:313)
+	at org.sonar.server.es.EsClient.execute(EsClient.java:305)
+	at org.sonar.server.es.EsClient.nodesStats(EsClient.java:216)
+	at org.sonar.server.monitoring.ElasticSearchMetricTask.updateFileSystemMetrics(ElasticSearchMetricTask.java:77)
+	at org.sonar.server.monitoring.ElasticSearchMetricTask.run(ElasticSearchMetricTask.java:51)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.net.SocketTimeoutException: 60,000 milliseconds timeout on connection http-outgoing-0 [ACTIVE]
+	at org.elasticsearch.client.RestClient.extractAndWrapCause(RestClient.java:917)
+	at org.elasticsearch.client.RestClient.performRequest(RestClient.java:300)
+	at org.elasticsearch.client.RestClient.performRequest(RestClient.java:288)
+	at org.sonar.server.es.EsClient.lambda$nodesStats$29(EsClient.java:218)
+	at org.sonar.server.es.EsClient.execute(EsClient.java:311)
+	... 10 common frames omitted
+Caused by: java.net.SocketTimeoutException: 60,000 milliseconds timeout on connection http-outgoing-0 [ACTIVE]
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.timeout(HttpAsyncRequestExecutor.java:387)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onTimeout(InternalIODispatch.java:92)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onTimeout(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.timeout(AbstractIODispatch.java:175)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.sessionTimedOut(BaseIOReactor.java:261)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.timeoutCheck(AbstractIOReactor.java:502)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.validate(BaseIOReactor.java:211)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:280)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+	... 1 common frames omitted
+2024.09.18 16:55:56 INFO  web[][o.s.p.ProcessEntryPoint] Gracefully stopping process
+2024.09.18 16:55:56 INFO  web[][o.s.s.n.NotificationDaemon] Notification service stopped
+2024.09.18 16:55:56 INFO  web[][c.z.h.HikariDataSource] HikariPool-1 - Shutdown initiated...
+2024.09.18 16:55:56 INFO  web[][c.z.h.HikariDataSource] HikariPool-1 - Shutdown completed.
+2024.09.18 16:55:56 WARN  web[][o.a.c.l.WebappClassLoaderBase] The web application [ROOT] appears to have started a thread named [logback-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:\n java.base@17.0.12/jdk.internal.misc.Unsafe.park(Native Method)\n java.base@17.0.12/java.util.concurrent.locks.LockSupport.park(Unknown Source)\n java.base@17.0.12/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(Unknown Source)\n java.base@17.0.12/java.util.concurrent.ForkJoinPool.unmanagedBlock(Unknown Source)\n java.base@17.0.12/java.util.concurrent.ForkJoinPool.managedBlock(Unknown Source)\n java.base@17.0.12/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(Unknown Source)\n java.base@17.0.12/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)\n java.base@17.0.12/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)\n java.base@17.0.12/java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)\n java.base@17.0.12/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)\n java.base@17.0.12/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)\n java.base@17.0.12/java.lang.Thread.run(Unknown Source)
+2024.09.18 16:55:56 WARN  web[][o.a.c.l.WebappClassLoaderBase] The web application [ROOT] appears to have started a thread named [logback-2] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:\n java.base@17.0.12/jdk.internal.misc.Unsafe.park(Native Method)\n java.base@17.0.12/java.util.concurrent.locks.LockSupport.park(Unknown Source)\n java.base@17.0.12/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(Unknown Source)\n java.base@17.0.12/java.util.concurrent.ForkJoinPool.unmanagedBlock(Unknown Source)\n java.base@17.0.12/java.util.concurrent.ForkJoinPool.managedBlock(Unknown Source)\n java.base@17.0.12/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(Unknown Source)\n java.base@17.0.12/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)\n java.base@17.0.12/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)\n java.base@17.0.12/java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)\n java.base@17.0.12/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)\n java.base@17.0.12/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)\n java.base@17.0.12/java.lang.Thread.run(Unknown Source)
+2024.09.18 16:55:56 WARN  web[][o.a.c.l.WebappClassLoaderBase] The web application [ROOT] appears to have started a thread named [logback-3] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:\n java.base@17.0.12/jdk.internal.misc.Unsafe.park(Native Method)\n java.base@17.0.12/java.util.concurrent.locks.LockSupport.park(Unknown Source)\n java.base@17.0.12/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(Unknown Source)\n java.base@17.0.12/java.util.concurrent.ForkJoinPool.unmanagedBlock(Unknown Source)\n java.base@17.0.12/java.util.concurrent.ForkJoinPool.managedBlock(Unknown Source)\n java.base@17.0.12/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(Unknown Source)\n java.base@17.0.12/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)\n java.base@17.0.12/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)\n java.base@17.0.12/java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)\n java.base@17.0.12/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)\n java.base@17.0.12/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)\n java.base@17.0.12/java.lang.Thread.run(Unknown Source)
+2024.09.18 16:55:56 WARN  web[][o.a.c.l.WebappClassLoaderBase] The web application [ROOT] appears to have started a thread named [logback-6] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:\n java.base@17.0.12/jdk.internal.misc.Unsafe.park(Native Method)\n java.base@17.0.12/java.util.concurrent.locks.LockSupport.park(Unknown Source)\n java.base@17.0.12/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(Unknown Source)\n java.base@17.0.12/java.util.concurrent.ForkJoinPool.unmanagedBlock(Unknown Source)\n java.base@17.0.12/java.util.concurrent.ForkJoinPool.managedBlock(Unknown Source)\n java.base@17.0.12/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(Unknown Source)\n java.base@17.0.12/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)\n java.base@17.0.12/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)\n java.base@17.0.12/java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)\n java.base@17.0.12/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)\n java.base@17.0.12/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)\n java.base@17.0.12/java.lang.Thread.run(Unknown Source)
+2024.09.18 16:55:56 INFO  web[][o.s.s.app.WebServer] Web Server stopped
