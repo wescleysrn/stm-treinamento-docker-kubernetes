@@ -1,0 +1,161 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","align":"full","layout":{"type":"constrained"}} -->
+<main class="wp-block-group alignfull">
+    
+    <!-- Hero Banner Section -->
+    <!-- wp:group {"align":"full","backgroundColor":"primary","textColor":"base","className":"hero-banner-block","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group alignfull hero-banner-block has-base-color has-primary-background-color has-text-color has-background">
+        <!-- wp:heading {"level":1,"fontSize":"xx-large"} -->
+        <h1 class="wp-block-heading has-xx-large-font-size">Transforme seu Futuro com Educação de Qualidade</h1>
+        <!-- /wp:heading -->
+        
+        <!-- wp:paragraph {"fontSize":"large"} -->
+        <p class="has-large-font-size">Aprenda com os melhores cursos online e desenvolva suas habilidades para alcançar seus objetivos profissionais.</p>
+        <!-- /wp:paragraph -->
+        
+        <!-- wp:buttons -->
+        <div class="wp-block-buttons">
+            <!-- wp:button {"backgroundColor":"base","textColor":"primary"} -->
+            <div class="wp-block-button"><a class="wp-block-button__link has-primary-color has-base-background-color has-text-color has-background wp-element-button" href="/courses">Explorar Cursos</a></div>
+            <!-- /wp:button -->
+            
+            <!-- wp:button {"backgroundColor":"transparent","textColor":"base","className":"is-style-outline"} -->
+            <div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-base-color has-transparent-background-color has-text-color has-background wp-element-button" href="#courses">Saiba Mais</a></div>
+            <!-- /wp:button -->
+        </div>
+        <!-- /wp:buttons -->
+    </div>
+    <!-- /wp:group -->
+    
+    <!-- Featured Courses Section -->
+    <!-- wp:group {"align":"full","backgroundColor":"light","layout":{"type":"constrained"}} -->
+    <div id="courses" class="wp-block-group alignfull has-light-background-color has-background">
+        <!-- wp:heading {"textAlign":"center","fontSize":"x-large"} -->
+        <h2 class="wp-block-heading has-text-align-center has-x-large-font-size">Cursos em Destaque</h2>
+        <!-- /wp:heading -->
+        
+        <!-- wp:paragraph {"align":"center"} -->
+        <p class="has-text-align-center">Descubra os cursos mais populares e comece sua jornada de aprendizado hoje mesmo</p>
+        <!-- /wp:paragraph -->
+        
+        <!-- wp:query {"queryId":1,"query":{"perPage":3,"pages":0,"offset":0,"postType":"lp_course","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false}} -->
+        <div class="wp-block-query">
+            <!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
+                <!-- wp:group {"className":"course-card","style":{"spacing":{"padding":{"top":"0","right":"0","bottom":"0","left":"0"}}},"layout":{"type":"default"}} -->
+                <div class="wp-block-group course-card" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
+                    <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9"} /-->
+                    
+                    <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","right":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40"}}},"layout":{"type":"default"}} -->
+                    <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
+                        <!-- wp:post-title {"level":3,"isLink":true,"fontSize":"large"} /-->
+                        
+                        <!-- wp:post-excerpt {"moreText":"Leia mais","excerptLength":15} /-->
+                        
+                        <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.25rem","fontWeight":"700"}},"textColor":"primary"} -->
+                        <p class="has-primary-color has-text-color" style="font-size:1.25rem;font-weight:700">Gratuito</p>
+                        <!-- /wp:paragraph -->
+                    </div>
+                    <!-- /wp:group -->
+                </div>
+                <!-- /wp:group -->
+            <!-- /wp:post-template -->
+            
+            <!-- wp:query-no-results -->
+                <!-- wp:paragraph -->
+                <p>Nenhum curso encontrado.</p>
+                <!-- /wp:paragraph -->
+            <!-- /wp:query-no-results -->
+        </div>
+        <!-- /wp:query -->
+        
+        <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+        <div class="wp-block-buttons">
+            <!-- wp:button -->
+            <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/courses">Ver Todos os Cursos</a></div>
+            <!-- /wp:button -->
+        </div>
+        <!-- /wp:buttons -->
+    </div>
+    <!-- /wp:group -->
+    
+    <!-- Featured Products Section -->
+    <!-- wp:group {"align":"full","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group alignfull">
+        <!-- wp:heading {"textAlign":"center","fontSize":"x-large"} -->
+        <h2 class="wp-block-heading has-text-align-center has-x-large-font-size">Produtos em Destaque</h2>
+        <!-- /wp:heading -->
+        
+        <!-- wp:paragraph {"align":"center"} -->
+        <p class="has-text-align-center">Materiais complementares e recursos para potencializar seu aprendizado</p>
+        <!-- /wp:paragraph -->
+        
+        <!-- wp:query {"queryId":2,"query":{"perPage":4,"pages":0,"offset":0,"postType":"product","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false}} -->
+        <div class="wp-block-query">
+            <!-- wp:post-template {"layout":{"type":"grid","columnCount":4}} -->
+                <!-- wp:group {"className":"product-card","style":{"spacing":{"padding":{"top":"0","right":"0","bottom":"0","left":"0"}}},"layout":{"type":"default"}} -->
+                <div class="wp-block-group product-card" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
+                    <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"1"} /-->
+                    
+                    <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","right":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40"}}},"layout":{"type":"default"}} -->
+                    <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
+                        <!-- wp:post-title {"level":3,"isLink":true,"fontSize":"large"} /-->
+                        
+                        <!-- wp:post-excerpt {"excerptLength":12} /-->
+                        
+                        <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.25rem","fontWeight":"700"}},"textColor":"primary"} -->
+                        <p class="has-primary-color has-text-color" style="font-size:1.25rem;font-weight:700">R$ 99,00</p>
+                        <!-- /wp:paragraph -->
+                    </div>
+                    <!-- /wp:group -->
+                </div>
+                <!-- /wp:group -->
+            <!-- /wp:post-template -->
+            
+            <!-- wp:query-no-results -->
+                <!-- wp:paragraph -->
+                <p>Nenhum produto encontrado.</p>
+                <!-- /wp:paragraph -->
+            <!-- /wp:query-no-results -->
+        </div>
+        <!-- /wp:query -->
+        
+        <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+        <div class="wp-block-buttons">
+            <!-- wp:button -->
+            <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/shop">Ver Todos os Produtos</a></div>
+            <!-- /wp:button -->
+        </div>
+        <!-- /wp:buttons -->
+    </div>
+    <!-- /wp:group -->
+    
+    <!-- Blog Posts Section (if not on home) -->
+    <!-- wp:query {"queryId":3,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":true}} -->
+    <div class="wp-block-query">
+        <!-- wp:post-template -->
+            <!-- wp:post-title {"isLink":true} /-->
+            <!-- wp:post-date /-->
+            <!-- wp:post-excerpt /-->
+            <!-- wp:separator /-->
+        <!-- /wp:post-template -->
+        
+        <!-- wp:query-pagination -->
+            <!-- wp:query-pagination-previous /-->
+            <!-- wp:query-pagination-numbers /-->
+            <!-- wp:query-pagination-next /-->
+        <!-- /wp:query-pagination -->
+        
+        <!-- wp:query-no-results -->
+            <!-- wp:paragraph -->
+            <p>Nenhum post encontrado.</p>
+            <!-- /wp:paragraph -->
+        <!-- /wp:query-no-results -->
+    </div>
+    <!-- /wp:query -->
+    
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
+ 

@@ -1,0 +1,3 @@
+/*!
+ * getwid-mailchimp
+ */.wp-block-getwid-mailchimp .wp-block-getwid-field-email,.wp-block-getwid-mailchimp .wp-block-getwid-field-first-name,.wp-block-getwid-mailchimp .wp-block-getwid-field-last-name{display:flex;flex-direction:column}.wp-block-getwid-mailchimp .wp-block-getwid-mailchimp__result.success{color:green}.wp-block-getwid-mailchimp .wp-block-getwid-mailchimp__result.fail{color:red}.wp-block-getwid-mailchimp__submit{margin-top:2em}.wp-block-getwid-mailchimp__submit .wp-block-button{margin-bottom:0}

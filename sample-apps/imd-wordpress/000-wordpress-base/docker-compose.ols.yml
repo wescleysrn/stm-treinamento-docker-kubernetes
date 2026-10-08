@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  wordpress_ols:
+    build:
+      context: .
+      dockerfile: openlitespeed/Dockerfile      
+    container_name: wp_ols
+    restart: always
+    volumes:
+      - ./wordpress:/var/www/html # Comentar para usar pasta copiada no Dockerfile, melhorando performance por não ter conversão de sistema de arquivos na pasta volume
+      - ./openlitespeed/wordpress-vhost.conf:/usr/local/lsws/conf/vhosts/Example/vhconf.conf
+    ports:
+      - "8088:8088"
+      - "7080:7080" # admin OLS (opcional)
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:7-alpine
+    container_name: wp_redis
+    restart: always
+    command: redis-server --save "" --appendonly no

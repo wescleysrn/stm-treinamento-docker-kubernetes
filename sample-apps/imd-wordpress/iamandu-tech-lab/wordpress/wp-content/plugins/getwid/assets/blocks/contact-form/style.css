@@ -1,0 +1,3 @@
+/*!
+ * getwid-contact-form
+ */.wp-block-getwid-contact-form .wp-block-getwid-field-email,.wp-block-getwid-contact-form .wp-block-getwid-field-name,.wp-block-getwid-contact-form .wp-block-getwid-field-textarea{display:flex;flex-direction:column}.wp-block-getwid-contact-form .wp-block-getwid-contact-form__result.success{color:green}.wp-block-getwid-contact-form .wp-block-getwid-contact-form__result.fail{color:red}.wp-block-getwid-contact-form__submit{margin-top:2em}.wp-block-getwid-contact-form__submit .wp-block-button{margin-bottom:0}.wp-block-getwid-captcha{margin-bottom:1em}

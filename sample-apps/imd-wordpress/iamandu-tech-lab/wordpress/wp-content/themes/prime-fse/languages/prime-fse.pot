@@ -1,0 +1,958 @@
+# Copyright (C) 2024 MotoPress
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Prime FSE 1.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/prime-fse\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-03-11T12:00:23+03:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.9.0\n"
+"X-Domain: prime-fse\n"
+
+#. Theme Name of the theme
+msgid "Prime FSE"
+msgstr ""
+
+#. Theme URI of the theme
+msgid "https://motopress.com/products/prime-fse/"
+msgstr ""
+
+#. Description of the theme
+msgid "Hand-crafted for the Full Site Editing (FSE) era, Prime is the ultimate free WordPress block theme for businesses and individuals. With 14+ pattern designs, multiple global styles, creative blocks by Getwid, demo content, and integrated mega menu, Prime FSE enables you to launch a modern, fast, and fully customizable website. Manipulate patterns in the visual WordPress editor to create a business consulting, personal band, agency, IT, startup, non-profit or any other type of website! The Prime WordPress FSE theme is the whole toolkit to embrace navigations, templates, patterns, and global styles of the modern full-site editing experiences. ➙ View demo here: https://themes.getmotopress.com/prime/"
+msgstr ""
+
+#. Author of the theme
+msgid "MotoPress"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://motopress.com/"
+msgstr ""
+
+#: functions.php:69
+msgid "BG Size Auto"
+msgstr ""
+
+#: functions.php:77
+msgid "BG Size Contain"
+msgstr ""
+
+#: functions.php:85
+msgid "Underline"
+msgstr ""
+
+#: functions.php:93
+msgid "With Shadow"
+msgstr ""
+
+#: functions.php:101
+msgid "Decorated"
+msgstr ""
+
+#: functions.php:109
+msgid "Pills"
+msgstr ""
+
+#: functions.php:117
+msgid "Repeating text"
+msgstr ""
+
+#: functions.php:125
+#: functions.php:133
+msgid "Style 1"
+msgstr ""
+
+#: functions.php:141
+msgid "Image Right"
+msgstr ""
+
+#: functions.php:148
+msgctxt "patterns category name"
+msgid "Prime FSE"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:327
+msgid "Install Required Plugins"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:328
+msgid "Install Plugins"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: includes/tgmpa/class-tgm-plugin-activation.php:330
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: includes/tgmpa/class-tgm-plugin-activation.php:332
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:333
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#. translators: 1: plugin name(s).
+#: includes/tgmpa/class-tgm-plugin-activation.php:334
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: includes/tgmpa/class-tgm-plugin-activation.php:340
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: includes/tgmpa/class-tgm-plugin-activation.php:346
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: includes/tgmpa/class-tgm-plugin-activation.php:352
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: includes/tgmpa/class-tgm-plugin-activation.php:358
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: includes/tgmpa/class-tgm-plugin-activation.php:364
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:370
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:375
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:380
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:385
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:386
+#: includes/tgmpa/class-tgm-plugin-activation.php:827
+#: includes/tgmpa/class-tgm-plugin-activation.php:2533
+#: includes/tgmpa/class-tgm-plugin-activation.php:3580
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:387
+#: includes/tgmpa/class-tgm-plugin-activation.php:3159
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:388
+#: includes/tgmpa/class-tgm-plugin-activation.php:2952
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name.
+#: includes/tgmpa/class-tgm-plugin-activation.php:390
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: includes/tgmpa/class-tgm-plugin-activation.php:392
+msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
+msgstr ""
+
+#. translators: 1: dashboard link.
+#: includes/tgmpa/class-tgm-plugin-activation.php:394
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:395
+msgid "Dismiss this notice"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:396
+msgid "There are one or more required or recommended plugins to install, update or activate."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:397
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:522
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:523
+msgid "Update Required"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:934
+msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:934
+#: includes/tgmpa/class-tgm-plugin-activation.php:937
+msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:937
+msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:1121
+#: includes/tgmpa/class-tgm-plugin-activation.php:2948
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#. translators: %s: version number
+#: includes/tgmpa/class-tgm-plugin-activation.php:1982
+msgid "TGMPA v%s"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2273
+msgid "Required"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2276
+msgid "Recommended"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2292
+msgid "WordPress Repository"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2295
+msgid "External Source"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2298
+msgid "Pre-Packaged"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2315
+msgid "Not Installed"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2319
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2321
+msgid "Active"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2327
+msgid "Required Update not Available"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2330
+msgid "Requires Update"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2333
+msgid "Update recommended"
+msgstr ""
+
+#. translators: 1: install status, 2: update status
+#: includes/tgmpa/class-tgm-plugin-activation.php:2342
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#. translators: 1: number of plugins.
+#: includes/tgmpa/class-tgm-plugin-activation.php:2388
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: includes/tgmpa/class-tgm-plugin-activation.php:2392
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: includes/tgmpa/class-tgm-plugin-activation.php:2396
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: includes/tgmpa/class-tgm-plugin-activation.php:2400
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2482
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2490
+msgid "Installed version:"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2498
+msgid "Minimum required version:"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2510
+msgid "Available version:"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2533
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2547
+msgid "Plugin"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2548
+msgid "Source"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2549
+msgid "Type"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2553
+msgid "Version"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2554
+msgid "Status"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: includes/tgmpa/class-tgm-plugin-activation.php:2603
+msgid "Install %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: includes/tgmpa/class-tgm-plugin-activation.php:2608
+msgid "Update %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: includes/tgmpa/class-tgm-plugin-activation.php:2614
+msgid "Activate %2$s"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2684
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2717
+msgid "Install"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2723
+msgid "Update"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2726
+msgid "Activate"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2757
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2759
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2800
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2802
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2908
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2934
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:3158
+msgid "Plugin activation failed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: includes/tgmpa/class-tgm-plugin-activation.php:3498
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#. translators: 1: plugin name, 2: error message.
+#: includes/tgmpa/class-tgm-plugin-activation.php:3501
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: includes/tgmpa/class-tgm-plugin-activation.php:3503
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:3507
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: includes/tgmpa/class-tgm-plugin-activation.php:3509
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:3510
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: includes/tgmpa/class-tgm-plugin-activation.php:3512
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:3515
+msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: includes/tgmpa/class-tgm-plugin-activation.php:3517
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:3518
+msgid "All installations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: includes/tgmpa/class-tgm-plugin-activation.php:3520
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: patterns/archive-header.php
+msgctxt "Pattern title"
+msgid "Archive Header"
+msgstr ""
+
+#: patterns/blog-header.php
+msgctxt "Pattern title"
+msgid "Blog Header"
+msgstr ""
+
+#: patterns/call-to-action-1.php
+msgctxt "Pattern title"
+msgid "Call to Action 1"
+msgstr ""
+
+#: patterns/call-to-action-2.php
+msgctxt "Pattern title"
+msgid "Call to Action 2"
+msgstr ""
+
+#: patterns/call-to-action-3.php
+msgctxt "Pattern title"
+msgid "Call to Action 3"
+msgstr ""
+
+#: patterns/call-to-action-4.php
+msgctxt "Pattern title"
+msgid "Call to Action 4"
+msgstr ""
+
+#: patterns/call-to-action-5.php
+msgctxt "Pattern title"
+msgid "Call to Action 5"
+msgstr ""
+
+#: patterns/call-to-action-6.php
+msgctxt "Pattern title"
+msgid "Call to Action 6"
+msgstr ""
+
+#: patterns/cards-with-action.php
+msgctxt "Pattern title"
+msgid "Cards with Action"
+msgstr ""
+
+#: patterns/career-1.php
+msgctxt "Pattern title"
+msgid "Career 1"
+msgstr ""
+
+#: patterns/career-2.php
+msgctxt "Pattern title"
+msgid "Career 2"
+msgstr ""
+
+#: patterns/columns-with-heading.php
+msgctxt "Pattern title"
+msgid "Columns with Heading"
+msgstr ""
+
+#: patterns/contacts-1.php
+msgctxt "Pattern title"
+msgid "Contacts 1"
+msgstr ""
+
+#: patterns/contacts-2.php
+msgctxt "Pattern title"
+msgid "Contacts 2"
+msgstr ""
+
+#: patterns/faq-1.php
+msgctxt "Pattern title"
+msgid "FAQ 1"
+msgstr ""
+
+#: patterns/faq-2.php
+msgctxt "Pattern title"
+msgid "FAQ 2"
+msgstr ""
+
+#: patterns/features-list-1.php
+msgctxt "Pattern title"
+msgid "Features List 1"
+msgstr ""
+
+#: patterns/features-list-2.php
+msgctxt "Pattern title"
+msgid "Features List 2"
+msgstr ""
+
+#: patterns/footer-2.php
+msgctxt "Pattern title"
+msgid "Footer 2"
+msgstr ""
+
+#: patterns/footer.php
+msgctxt "Pattern title"
+msgid "Footer"
+msgstr ""
+
+#: patterns/header-2.php
+msgctxt "Pattern title"
+msgid "Header 2"
+msgstr ""
+
+#: patterns/header.php
+msgctxt "Pattern title"
+msgid "Header"
+msgstr ""
+
+#: patterns/hero-1.php
+msgctxt "Pattern title"
+msgid "Hero 1"
+msgstr ""
+
+#: patterns/hero-2.php
+msgctxt "Pattern title"
+msgid "Hero 2"
+msgstr ""
+
+#: patterns/image-text-large.php
+msgctxt "Pattern title"
+msgid "Large Image with Text"
+msgstr ""
+
+#: patterns/image-text-performance.php
+msgctxt "Pattern title"
+msgid "Image with Text and Performance"
+msgstr ""
+
+#: patterns/image-text-quote.php
+msgctxt "Pattern title"
+msgid "Image with Text and Quotation"
+msgstr ""
+
+#: patterns/image-text-tiles-large.php
+msgctxt "Pattern title"
+msgid "Image with Text Tiles Large"
+msgstr ""
+
+#: patterns/image-text-tiles.php
+msgctxt "Pattern title"
+msgid "Image with Text Tiles"
+msgstr ""
+
+#: patterns/image-text.php
+msgctxt "Pattern title"
+msgid "Image with Text"
+msgstr ""
+
+#: patterns/latest-posts-1.php
+msgctxt "Pattern title"
+msgid "Latest Posts 1"
+msgstr ""
+
+#: patterns/latest-posts-2.php
+msgctxt "Pattern title"
+msgid "Latest Posts 2"
+msgstr ""
+
+#: patterns/latest-posts-3.php
+msgctxt "Pattern title"
+msgid "Latest Posts 3"
+msgstr ""
+
+#: patterns/latest-posts-4.php
+msgctxt "Pattern title"
+msgid "Latest Posts 4"
+msgstr ""
+
+#: patterns/latest-posts-5.php
+msgctxt "Pattern title"
+msgid "Latest Posts 5"
+msgstr ""
+
+#: patterns/latest-posts-6.php
+msgctxt "Pattern title"
+msgid "Latest Posts 6"
+msgstr ""
+
+#: patterns/page-header.php
+msgctxt "Pattern title"
+msgid "Page Header"
+msgstr ""
+
+#: patterns/partners-list.php
+msgctxt "Pattern title"
+msgid "Partners List"
+msgstr ""
+
+#: patterns/performace.php
+msgctxt "Pattern title"
+msgid "Performance"
+msgstr ""
+
+#: patterns/post-header.php
+msgctxt "Pattern title"
+msgid "Post Header"
+msgstr ""
+
+#: patterns/posts-loop-list.php
+msgctxt "Pattern title"
+msgid "Posts Loop List"
+msgstr ""
+
+#: patterns/posts-loop.php
+msgctxt "Pattern title"
+msgid "Posts Loop"
+msgstr ""
+
+#: patterns/pricing-1.php
+msgctxt "Pattern title"
+msgid "Pricing 1"
+msgstr ""
+
+#: patterns/pricing-2.php
+msgctxt "Pattern title"
+msgid "Pricing 2"
+msgstr ""
+
+#: patterns/profile.php
+msgctxt "Pattern title"
+msgid "Profile"
+msgstr ""
+
+#: patterns/projects-1.php
+msgctxt "Pattern title"
+msgid "Projects 1"
+msgstr ""
+
+#: patterns/projects-2.php
+msgctxt "Pattern title"
+msgid "Projects 2"
+msgstr ""
+
+#: patterns/projects-3.php
+msgctxt "Pattern title"
+msgid "Projects 3"
+msgstr ""
+
+#: patterns/search-header.php
+msgctxt "Pattern title"
+msgid "Search Header"
+msgstr ""
+
+#: patterns/table.php
+msgctxt "Pattern title"
+msgid "Table"
+msgstr ""
+
+#: patterns/team-1.php
+msgctxt "Pattern title"
+msgid "Team 1"
+msgstr ""
+
+#: patterns/team-2.php
+msgctxt "Pattern title"
+msgid "Team 2"
+msgstr ""
+
+#: patterns/team-3.php
+msgctxt "Pattern title"
+msgid "Team 3"
+msgstr ""
+
+#: patterns/testimonials-1.php
+msgctxt "Pattern title"
+msgid "Testimonials 1"
+msgstr ""
+
+#: patterns/testimonials-2.php
+msgctxt "Pattern title"
+msgid "Testimonials 2"
+msgstr ""
+
+#: patterns/testimonials-3.php
+msgctxt "Pattern title"
+msgid "Testimonials 3"
+msgstr ""
+
+#: patterns/testimonials-4.php
+msgctxt "Pattern title"
+msgid "Testimonials 4"
+msgstr ""
+
+#: patterns/text-table.php
+msgctxt "Pattern title"
+msgid "Text with Table"
+msgstr ""
+
+#: patterns/video-popup.php
+msgctxt "Pattern title"
+msgid "Video Popup"
+msgstr ""
+
+#: styles/lavender.json
+msgctxt "Style variation name"
+msgid "Lavender"
+msgstr ""
+
+#: styles/lavender.json
+#: styles/pale-gray.json
+#: styles/sage.json
+#: styles/sky-blue.json
+#: theme.json
+msgctxt "Color name"
+msgid "Color 1"
+msgstr ""
+
+#: styles/lavender.json
+#: styles/pale-gray.json
+#: styles/sage.json
+#: styles/sky-blue.json
+#: theme.json
+msgctxt "Color name"
+msgid "Color 4"
+msgstr ""
+
+#: styles/lavender.json
+#: styles/pale-gray.json
+#: styles/sage.json
+#: styles/sky-blue.json
+#: theme.json
+msgctxt "Color name"
+msgid "Color 2"
+msgstr ""
+
+#: styles/lavender.json
+#: styles/pale-gray.json
+#: styles/sage.json
+#: styles/sky-blue.json
+#: theme.json
+msgctxt "Color name"
+msgid "Color 6"
+msgstr ""
+
+#: styles/lavender.json
+#: styles/pale-gray.json
+#: styles/sage.json
+#: styles/sky-blue.json
+msgctxt "Color name"
+msgid "Color 7"
+msgstr ""
+
+#: styles/lavender.json
+#: styles/pale-gray.json
+#: styles/sage.json
+#: styles/sky-blue.json
+msgctxt "Color name"
+msgid "Color 9"
+msgstr ""
+
+#: styles/pale-gray.json
+msgctxt "Style variation name"
+msgid "Pale Gray"
+msgstr ""
+
+#: styles/sage.json
+msgctxt "Style variation name"
+msgid "Sage"
+msgstr ""
+
+#: styles/sky-blue.json
+msgctxt "Style variation name"
+msgid "Sky Blue"
+msgstr ""
+
+#: theme.json
+msgctxt "Gradient name"
+msgid "Gradient 1"
+msgstr ""
+
+#: theme.json
+msgctxt "Gradient name"
+msgid "Gradient 2"
+msgstr ""
+
+#: theme.json
+msgctxt "Gradient name"
+msgid "Gradient 3"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Color 3"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Color 5"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "Small"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "Medium"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "Normal"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "Large"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "Extra Large"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Normal"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Medium"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Large"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Big"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Huge"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Extra Huge"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Extra Extra Huge"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Footer"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Footer No Space"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Sidebar"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "No Footer Space"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Canvas"
+msgstr ""
