@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  nginx-ingress:
+    build: .
+    container_name: ingress-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8082:8082" # IMPORTANTE: Adicione a porta 8082 para o Docker Registry do Nexus!
+    volumes:
+      - ./conf.d:/etc/nginx/conf.d:ro
+    networks:
+      - ingress-network
+    restart: always
+
+networks:
+  ingress-network:
+    external: true

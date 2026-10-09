@@ -1,24 +1,26 @@
 version: "3.9"
+
 services:
   nexus:
     image: sonatype/nexus3:3.72.0
-    command: ['sh', '-c', 'chown -R 200:200 /nexus-data && $${SONATYPE_DIR}/start-nexus-repository-manager.sh']
     container_name: imd-nexus
+    restart: always
+    user: "200:200"
+    expose:
+      - "8081" # Web UI / Maven / NPM (Acessível via rede Docker para o Ingress)
+      - "8082" # Docker Registry / Proxy (Acessível via rede Docker para o Ingress)
     ports:
-      - 9001:8081
-      - 9002:8082
+      - "9001:8081" # Mantido apenas se quiser acessar o Nexus diretamente via localhost:9001 (opcional/debug)
     volumes:
-      - nexus-data:/nexus-data
+      - ./nexus_data:/nexus-data
     networks:
-      - nexus-network
+      - ingress-network
     deploy:
       resources:
         limits:
-          cpus: "1.0"
+          cpus: "2.0"
           memory: "2G"
-volumes:
-    nexus-data:
-        external: true
-        name: nexus-data
+
 networks:
-  nexus-network:
+  ingress-network:
+    external: true

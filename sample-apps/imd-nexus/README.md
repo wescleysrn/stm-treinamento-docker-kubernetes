@@ -1,7 +1,188 @@
-# IMD Nexus
+# 📦 IMD Nexus - Gerenciador de Repositórios & Docker Registry
 
-Serviço para exercer o papel de Docker Register, NPM Private Repository e Maven Repository.
-Será utilizado para gestão de imagens docker, archetypes maven e componentes Angular e Ionic.
+Este serviço atua como o **Gerenciador de Artefatos Privado** para a infraestrutura do curso, exercendo papéis de:
+* **Docker Registry** (Hosted, Group e Proxy Mirror para o Docker Hub)
+* **Maven Private Repository** (Para artefatos Java/Spring)
+* **NPM Private Repository** (Para pacotes Node.js/Angular)
+
+Integrado ao **Nginx Ingress**, o Nexus estará acessível de forma segura via HTTPS em: `https://nexus.stmcurso.com.br`
+
+---
+
+## 🚀 1. Estrutura do Projeto e Execução
+
+### Pré-requisito de Rede
+
+Certifique-se de que a rede compartilhada com o Ingress foi criada:
+
+```bash
+docker network create ingress-network
+```
+
+Subindo o Serviço
+Estando no diretório imd-nexus:
+
+```bash
+docker-compose up -d
+```
+
+> Nota sobre Armazenamento:
+> Os dados do Nexus são persistidos na pasta local ./nexus_data, garantindo portabilidade entre Windows, Linux e macOS sem dependência de caminhos absolutos.
+
+🔑 2. Primeiro Acesso e Configuração Inicial
+Acesse no navegador: https://nexus.stmcurso.com.br
+
+Clique em Sign in (canto superior direito).
+
+Obtenha a senha inicial do administrador lendo o arquivo gerado na pasta local ./nexus_data:
+
+PowerShell / VS Code:
+
+```powershell
+Get-Content ./nexus_data/admin.password
+```
+
+Linux / Bash:
+
+```bash
+cat ./nexus_data/admin.password
+```
+
+Digite o usuário admin e a senha recuperada.
+
+Crie uma nova senha para o admin (exemplo do curso: admin123 ou equivalente).
+
+Na tela Configure Anonymous Access, selecione Disable anonymous access para exigir autenticação na publicação de imagens.
+
+
+🐳 3. Configurando o Nexus como Docker Registry (Hosted & Mirror)
+3.1 Ativar o Realm do Docker Bearer Token
+Acesse Server administration and configuration (ícone de engrenagem) > Security > Realms.
+
+Mova Docker Bearer Token Realm da coluna Available para Active.
+
+Clique em Save.
+
+3.2 Criar um Repositório Docker Hosted (Para Publicar Imagens)
+Vá em Repository > Repositories > Create repository.
+
+Selecione a receita docker (hosted).
+
+Configure:
+
+Name: imd-docker-hosted
+
+HTTP Port: Marque e defina 8082
+
+Enable Docker V1 API: Desmarcado
+
+Allow anonymous docker pull: Opcional (desmarcado por padrão)
+
+Save repository.
+
+3.3 Criar um Repositório Docker Proxy / Mirror (Cache do Docker Hub)
+Para economizar banda e evitar o limite de requisições do Docker Hub:
+
+Vá em Repository > Repositories > Create repository.
+
+Selecione docker (proxy).
+
+Configure:
+
+Name: dockerhub-proxy
+
+Remote storage: https://registry-1.docker.io
+
+Docker Index: Use Docker Hub (https://index.docker.io/v1/)
+
+Save repository.
+
+3.4 Criar Usuário para Publicação Docker
+Vá em Security > Roles > Create Role (Nexus role).
+
+Role ID: role-docker-developer
+
+Privileges: Adicione todos os privilégios iniciados por nx-repository-view-docker-*.
+
+Vá em Security > Users > Create local user.
+
+ID / Username: docker
+
+Password: docker123
+
+Roles: Atribua a role role-docker-developer.
+
+🛠️ 4. Testando o Uso do Registry (Login, Push e Pull)
+4.1 Realizar Login no Registry
+Como estamos utilizando o certificado SSL autoassinado gerado nas etapas anteriores, autentique-se apontando para a porta do Registry (8082):
+
+```bash
+docker login nexus.stmcurso.com.br:8082 -u docker -p docker123
+```
+
+4.2 Publicar uma Imagem Exemplo (Nginx)
+
+Faça o pull de uma imagem oficial simples do Nginx:
+
+```bash
+docker pull nginx:alpine
+```
+
+Crie uma tag apontando para o seu Nexus:
+
+```bash
+docker tag nginx:alpine nexus.stmcurso.com.br:8082/meu-app-nginx:1.0
+```
+
+Publique a imagem no Nexus:
+
+```bash
+docker push nexus.stmcurso.com.br:8082/meu-app-nginx:1.0
+```
+
+4.3 Baixar e Executar a Imagem a partir do Nexus
+
+Remova a imagem local para testar a busca no repositório:
+
+```bash
+docker rmi nexus.stmcurso.com.br:8082/meu-app-nginx:1.0 nginx:alpine
+```
+
+Execute o container baixando a imagem diretamente do Nexus:
+
+```bash
+docker run -d --name app-via-nexus -p 8080:80 nexus.stmcurso.com.br:8082/meu-app-nginx:1.0
+```
+
+Teste no seu navegador acessando:
+http://localhost:8080
+
+
+## 🛑 5. Parando o Serviço
+Para encerrar o Nexus mantendo os dados preservados:
+
+```bash
+docker-compose down
+```
+
+
+
+
+
+
+
+
+
+
+
+
+---------------
+
+
+
+
+
+
 
 ## Criação dos Volumes
 
