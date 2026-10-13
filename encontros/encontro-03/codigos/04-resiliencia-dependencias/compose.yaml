@@ -1,0 +1,64 @@
+services:
+  # ---------------------------------------------------------------------------
+  # SERVIÇO 1: Banco de Dados PostgreSQL com Healthcheck
+  # ---------------------------------------------------------------------------
+  db:
+    image: postgres:16-alpine
+    container_name: resiliencia-db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: secretpassword
+      POSTGRES_DB: app_db
+
+    # HEALTHCHECK: Garante que o serviço só é considerado pronto quando aceitar conexões SQL
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d app_db"]
+      interval: 5s       # Executa o teste a cada 5 segundos
+      timeout: 5s        # Tempo limite para resposta do teste
+      retries: 5         # Quantidade de tentativas antes de marcar como 'unhealthy'
+      start_period: 10s  # Tolerância inicial de boot para o container subir o processo
+
+    restart: unless-stopped
+
+  # ---------------------------------------------------------------------------
+  # SERVIÇO 2: Cache Redis com Healthcheck
+  # ---------------------------------------------------------------------------
+  cache:
+    image: redis:7-alpine
+    container_name: resiliencia-cache
+
+    # HEALTHCHECK: Valida o Redis via comando ping interno
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli ping | grep PONG"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
+
+    restart: unless-stopped
+
+  # ---------------------------------------------------------------------------
+  # SERVIÇO 3: API Python dependente das condições dos serviços auxiliares
+  # ---------------------------------------------------------------------------
+  api:
+    build: ./app
+    container_name: resiliencia-api
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_HOST=db
+      - DB_USER=admin
+      - DB_PASS=secretpassword
+      - DB_NAME=app_db
+      - REDIS_HOST=cache
+
+    # DEPENDS_ON com CONDITION: A ordem de boot só é liberada quando o
+    # Healthcheck dos serviços dependentes retornar 'healthy' (resolve a race condition)
+    depends_on:
+      db:
+        condition: service_healthy
+      cache:
+        condition: service_healthy
+
+    # RESTART: Política on-failure com retentativas em falha de execução
+    restart: on-failure:3
