@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel Multicontainer Docker Compose</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f4f9; }
+        h1 { color: #333; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        .status-ok { color: green; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Status da Aplicação Multicontainer</h1>
+    <div class="card">
+        <h2>Conexão com a API Backend e Banco:</h2>
+        <p id="status">Carregando status...</p>
+    </div>
+
+    <script>
+        fetch('/api/health')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('status').innerText = data.database;
+                document.getElementById('status').className = 'status-ok';
+            })
+            .catch(err => {
+                document.getElementById('status').innerText = 'Erro ao conectar na API!';
+            });
+    </script>
+</body>
+</html>
