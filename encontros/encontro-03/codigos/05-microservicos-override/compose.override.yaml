@@ -1,0 +1,21 @@
+# O Docker Compose combina este arquivo AUTOMATICAMENTE com o compose.yaml
+# quando executado o comando 'docker compose up' em ambiente de desenvolvimento.
+
+services:
+  api:
+    environment:
+      - APP_ENV=desenvolvimento
+      - FLASK_DEBUG=1
+    # Sobrescrita 1: Publica a porta para acesso via localhost apenas em dev
+    ports:
+      - "5000:5000"
+    # Sobrescrita 2: Monta o código local em tempo real (Hot Reload sem rebuild)
+    volumes:
+      - ./api:/app
+
+  worker:
+    environment:
+      - APP_ENV=desenvolvimento
+    # Sobrescrita 3: Monta o código do worker para refletir alterações sem re-compilar
+    volumes:
+      - ./worker:/app

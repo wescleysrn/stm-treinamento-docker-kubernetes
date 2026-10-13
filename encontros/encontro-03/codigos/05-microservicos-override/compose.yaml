@@ -1,0 +1,52 @@
+services:
+  # ---------------------------------------------------------------------------
+  # CACHE REDIS (Fila de Tarefas)
+  # ---------------------------------------------------------------------------
+  cache:
+    image: redis:7-alpine
+    container_name: ms-cache
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli ping | grep PONG"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    networks:
+      - internal-net
+    restart: always
+
+  # ---------------------------------------------------------------------------
+  # API PRINCIPAL (Base de Produção: Sem exposição de porta direta, sem bind mount)
+  # ---------------------------------------------------------------------------
+  api:
+    build: ./api
+    container_name: ms-api
+    environment:
+      - REDIS_HOST=cache
+      - APP_ENV=producao
+      - FLASK_DEBUG=0
+    depends_on:
+      cache:
+        condition: service_healthy
+    networks:
+      - internal-net
+    restart: always
+
+  # ---------------------------------------------------------------------------
+  # WORKER DE BACKGROUND
+  # ---------------------------------------------------------------------------
+  worker:
+    build: ./worker
+    container_name: ms-worker
+    environment:
+      - REDIS_HOST=cache
+      - APP_ENV=producao
+    depends_on:
+      cache:
+        condition: service_healthy
+    networks:
+      - internal-net
+    restart: always
+
+networks:
+  internal-net:
+    driver: bridge
