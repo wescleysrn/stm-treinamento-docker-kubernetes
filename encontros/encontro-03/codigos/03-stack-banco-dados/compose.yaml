@@ -1,0 +1,60 @@
+services:
+  # ---------------------------------------------------------------------------
+  # SERVIÇO 1: Aplicação Web (Flask)
+  # ---------------------------------------------------------------------------
+  web:
+    build: ./web
+    container_name: web-db-app
+    ports:
+      - "5000:5000"
+    
+    # ENV_FILE: Carrega o arquivo de variáveis do banco diretamente
+    env_file:
+      - .env.db
+    environment:
+      - DB_HOST=db-postgres # Nome do serviço do banco na rede interna
+
+    # NETWORKS: O serviço web está presente nas duas redes (faz a ponte)
+    networks:
+      - frontend-net
+      - backend-net
+
+    restart: unless-stopped
+
+  # ---------------------------------------------------------------------------
+  # SERVIÇO 2: Banco de Dados PostgreSQL
+  # ---------------------------------------------------------------------------
+  db-postgres:
+    image: postgres:16-alpine
+    container_name: postgres-db-app
+    
+    # O PostgreSQL utiliza automaticamente as variáveis POSTGRES_USER,
+    # POSTGRES_PASSWORD e POSTGRES_DB fornecidas pelo env_file
+    env_file:
+      - .env.db
+
+    # VOLUMES: Named Volume para garantir a persistência dos dados do SGBD
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+    # NETWORKS: Fica isolado APENAS na rede backend (inacessível externamente)
+    networks:
+      - backend-net
+
+    restart: unless-stopped
+
+# -----------------------------------------------------------------------------
+# BLOCOS DE INFRAESTRUTURA GLOBAIS (VOLUMES E NETWORKS)
+# -----------------------------------------------------------------------------
+
+# 1. NAMED VOLUMES: Gerenciados pelo Docker engine em área dedicada do SO
+volumes:
+  pgdata:
+    driver: local
+
+# 2. NETWORKS: Redes virtuais independentes para isolamento de tráfego
+networks:
+  frontend-net:
+    driver: bridge
+  backend-net:
+    driver: bridge

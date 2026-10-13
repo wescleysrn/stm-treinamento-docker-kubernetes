@@ -1,0 +1,21 @@
+services:
+  web:
+    # 1. IMAGE: Define a imagem oficial e leve do Nginx vinda do Docker Hub
+    image: nginx:alpine
+
+    # Define um nome amigável para o container
+    container_name: web-estatico-app
+
+    # 2. PORTS: Mapeia a porta do Host (maquina do aluno) para a porta interna do Container
+    # Sintaxe: "PORTA_HOST:PORTA_CONTAINER"
+    ports:
+      - "8080:80"
+
+    # 3. VOLUMES: Bind Mount montando a pasta local ./html dentro do diretório padrao do Nginx
+    # O sufixo :ro (read-only) garante que o container apenas leia o diretório
+    volumes:
+      - ./html:/usr/share/nginx/html:ro
+
+    # 4. RESTART: Política de reinicialização do container
+    # Reinia o container automaticamente se ele cair ou ao reiniciar o Docker, a menos que seja parado manualmente
+    restart: always

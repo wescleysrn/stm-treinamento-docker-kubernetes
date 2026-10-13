@@ -1,0 +1,9 @@
+services:
+  meu-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nginx-index-curso
+    ports:
+      - "8080:80"
+    restart: unless-stopped
