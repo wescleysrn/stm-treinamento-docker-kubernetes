@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-nginx-full
+  namespace: desenvolvimento
+  labels:
+    app: web-full
+spec:
+  containers:
+    - name: nginx
+      image: nginx:alpine
+      ports:
+        - containerPort: 80
+      volumeMounts:
+        - name: html-content
+          mountPath: /usr/share/nginx/html/index.html
+          subPath: index.html
+          readOnly: true
+  volumes:
+    - name: html-content
+      configMap:
+        name: nginx-html

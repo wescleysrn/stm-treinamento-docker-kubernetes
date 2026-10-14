@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stm-localizacao-rs-deployment
+  namespace: stm-localizacao-ibge
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: stm-localizacao-rs
+  template:
+    metadata:
+      labels:
+        app: stm-localizacao-rs
+        tier: api
+    spec:
+      containers:
+      - name: stm-localizacao-rs
+        image: wescleymacedosousa/stm-localizacao-rs:1.0.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          name: http
+        envFrom:
+        - configMapRef:
+            name: stm-localizacao-config
+        - secretRef:
+            name: stm-localizacao-secret
+        readinessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 8080
+          initialDelaySeconds: 20
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+        livenessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 8080
+          initialDelaySeconds: 40
+          periodSeconds: 30
+          timeoutSeconds: 10
+          failureThreshold: 5

@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: stm-localizacao-rs
+  namespace: stm-localizacao-ibge
+  labels:
+    app: stm-localizacao-rs
+    tier: api
+spec:
+  containers:
+  - name: stm-localizacao-rs
+    image: wescleymacedosousa/stm-localizacao-rs:1.0.0
+    imagePullPolicy: IfNotPresent
+    ports:
+    - containerPort: 8080
+      name: http
+    
+    # Injeção automática de todas as variáveis do ConfigMap e Secret
+    envFrom:
+    - configMapRef:
+        name: stm-localizacao-config
+    - secretRef:
+        name: stm-localizacao-secret
+        
+    # Mapeamento do healthcheck do docker-compose para Liveness e Readiness Probes do K8s
+    readinessProbe:
+      httpGet:
+        path: /actuator/health
+        port: 8080
+      initialDelaySeconds: 20
+      periodSeconds: 10
+      timeoutSeconds: 5
+      failureThreshold: 3
+    livenessProbe:
+      httpGet:
+        path: /actuator/health
+        port: 8080
+      initialDelaySeconds: 40
+      periodSeconds: 30
+      timeoutSeconds: 10
+      failureThreshold: 5

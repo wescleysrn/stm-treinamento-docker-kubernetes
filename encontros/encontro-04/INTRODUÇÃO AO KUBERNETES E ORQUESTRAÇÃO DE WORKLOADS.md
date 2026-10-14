@@ -416,7 +416,7 @@ Passo 2: Executar a Criação do Cluster
 Execute o comando do Kind passando o arquivo de configuração:
 
 ```bash
-kind create cluster --name k8s-turma --config kind-cluster.yaml
+kind create cluster --name k8s-turma-stm --config kind-cluster.yaml
 ```
 
 Saída esperada no terminal:

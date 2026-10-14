@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-api-springboot
+  namespace: desenvolvimento
+  labels:
+    app: backend-api
+    tier: api
+spec:
+  containers:
+  - name: api
+    image: springio/gs-spring-boot-docker:latest # Imagem de exemplo pública Spring Boot
+    ports:
+    - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-api-service
+  namespace: desenvolvimento
+spec:
+  type: ClusterIP
+  selector:
+    app: backend-api
+  ports:
+  - port: 8080
+    targetPort: 8080

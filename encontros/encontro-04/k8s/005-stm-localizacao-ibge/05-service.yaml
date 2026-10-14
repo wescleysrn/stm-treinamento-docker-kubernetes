@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: stm-localizacao-service
+  namespace: stm-localizacao-ibge
+spec:
+  type: ClusterIP # Pode ser alterado para NodePort se desejar exposição direta na porta do Nó
+  selector:
+    app: stm-localizacao-rs
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
