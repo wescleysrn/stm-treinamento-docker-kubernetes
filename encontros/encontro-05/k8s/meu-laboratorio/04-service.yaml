@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    app: backend-app      # Vincula o Service aos Pods com a label 'app: backend-app'
+  ports:
+    - protocol: TCP
+      port: 80            # Porta exposta no Service interno
+      targetPort: 80      # Porta de destino dentro do container do Pod
+      nodePort: 30080     # Porta exposta nos nós do cluster
