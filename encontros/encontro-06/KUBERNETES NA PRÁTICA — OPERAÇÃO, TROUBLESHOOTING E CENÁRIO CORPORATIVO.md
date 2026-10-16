@@ -543,6 +543,11 @@ docker run -d --name teste-stm -p 5000:5000 \
   stm-app:v1.0.0
 ```
 
+```bash
+docker run -d --name teste-stm -p 5000:5000 -e APP_ENV="Local-Docker" -e WELCOME_MSG="Teste local realizado com sucesso" stm-app:v1.0.0
+```
+
+
 Valide no seu navegador ou terminal acessando http://localhost:5000. Em seguida, pare e remova o container local:
 
 ```bash

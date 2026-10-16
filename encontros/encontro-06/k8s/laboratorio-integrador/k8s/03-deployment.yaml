@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stm-app-deployment
+  namespace: default
+  labels:
+    app: stm-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: stm-app
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: stm-app
+    spec:
+      containers:
+        - name: stm-container
+          image: wescleymacedosousa/stm-app:v1.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5000
+          envFrom:
+            - configMapRef:
+                name: stm-app-config
+            - secretRef:
+                name: stm-app-secret
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "250m"
+              memory: "256Mi"
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 5000
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 5000
+            initialDelaySeconds: 10
+            periodSeconds: 10

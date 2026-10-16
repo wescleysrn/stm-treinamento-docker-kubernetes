@@ -13,7 +13,7 @@ spec:
     - localizacao.stmcurso.com.br
     secretName: stm-curso-tls-secret
   rules:
-  - host: localizacao.stmcurso.com.br
+  - host: ibge.stmcurso.com.br
     http:
       paths:
       - path: /
