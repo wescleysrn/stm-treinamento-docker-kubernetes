@@ -4,7 +4,7 @@ metadata:
   name: stm-localizacao-rs-deployment
   namespace: stm-localizacao-ibge
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: stm-localizacao-rs
@@ -26,6 +26,13 @@ spec:
             name: stm-localizacao-config
         - secretRef:
             name: stm-localizacao-secret
+        resources:
+          requests:
+            cpu: "200m"      # 0.1 de 1 núcleo de CPU
+            memory: "600Mi"  # 128 Megabytes de RAM
+          limits:
+            cpu: "1200m"
+            memory: "1024Mi"
         readinessProbe:
           httpGet:
             path: /actuator/health

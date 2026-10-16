@@ -790,3 +790,59 @@ Tabela Resumo de Operações de Cargas de Trabalho e Configurações
 | Secrets | `kubectl get secrets` | Lista os objetos Secrets no namespace. |
 | Secrets | `kubectl describe secret <nome>` | Exibe os metadados das chaves do Secret (valores velados). |
 
+## HPA
+
+1. Instalar o Metrics Server
+Execute o comando oficial para implantar o Metrics Server:
+
+```bash
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+```
+
+> Como verificar se funcionou: Aguarde alguns segundos e execute kubectl get pods -n kube-system -l k8s-app=metrics-server. O pod do metrics-server deve estar com status Running.
+
+2. Corrigir erro de TLS (Comum em ambientes de dev/local)
+Se você estiver usando Minikube, Kind, k3s ou ambientes com certificados autoassinados, o Metrics Server pode falhar ao validar o certificado TLS dos nós.
+
+Se o pod do metrics-server não ficar Ready, edite a deployment dele:
+
+```bash
+kubectl edit deployment metrics-server -n kube-system
+```
+
+Procure pela seção spec.template.spec.containers.args e adicione a flag --kubelet-insecure-tls:
+
+```yaml
+spec:
+  containers:
+  - args:
+    - --cert-dir=/tmp
+    - --secure-port=4443
+    - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
+    - --kubelet-use-node-status-port
+    - --metric-resolution=15s
+    - --kubelet-insecure-tls  # Add esta linha
+```
+
+Salve e feche o editor (no vi/vim, aperte Esc, digite :wq e pressione Enter).
+
+3. Validar a coleta de métricas
+Aguarde cerca de 1 a 2 minutos para que o Metrics Server comece a coletar os dados do cluster.
+
+Teste a leitura das métricas diretamente via CLI:
+
+```bash
+kubectl top pods -n stm-localizacao-ibge
+```
+
+Como verificar se funcionou: O comando deve listar a taxa de uso de CPU e Memória dos seus pods sem retornar erros.
+
+Verifique o status do HPA:
+
+```bash
+kubectl get hpa stm-localizacao-rs-hpa -n stm-localizacao-ibge
+```
+
+Como verificar se funcionou: A coluna TARGETS deve mudar de <unknown> para os percentuais reais de consumo (ex: 2%/60%, 12%/60%).
+
+
